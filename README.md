@@ -6,15 +6,15 @@ Tested with OBS Studio 30.0.2 on Windows 10.
 
 ## Usage
 
-1. Download the latest release from [here]() and extract the zip file.
+1. Download [replay_save_notification.lua](./replay_save_notification.lua) and [replay_saved.wav](./replay_saved.wav).
 2. In OBS Studio, go to `Tools > Scripts`. This will open the Scripts window.
-3. Press the `+` button and drag an drop both files into the folder that opens.
+3. Press the `+` button and drag an drop **both** files into the folder that opens.
 4. Select `replay_save_notification.lua` and press `Open`. Now it should look like this:<br><br>
 ![scripts](https://github.com/mriot/mriot/assets/24588573/c4ef7c21-e9dd-4788-8c2d-2498ab56c9fb)
-5. Now, go to `Settings > Hotkeys` and add the **same** hotkey for `Save Replay` and `Save Replay Notification` like in the screenshot below. (which hotkey you use is up to you)<br><br>
+1. Now, go to `Settings > Hotkeys` and add the **same** hotkey for `Save Replay` and `Save Replay Notification` like in the screenshot below. (which hotkey you use is up to you)<br><br>
 ![hotkeys](https://github.com/mriot/mriot/assets/24588573/f21f6864-53e4-46c7-8a52-319ae05688b4)
 
-6. Press `OK` and you're done. Now you should hear a sound when you save a Replay with your hotkey.
+1. Press `OK` and you're done. Now you should hear a sound when you save a Replay with your hotkey.
 
 ### Note
 
