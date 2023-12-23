@@ -6,7 +6,7 @@ Tested with OBS Studio 30.0.2 on Windows 10.
 
 ## Usage
 
-1. Download [replay_save_notification.lua](./replay_save_notification.lua) and [replay_saved.wav](./replay_saved.wav).
+1. Download `replay_save_notification.lua` and `replay_saved.wav` from the [latest release](https://github.com/mriot/obs-replay-save-notification/releases).
 2. In OBS Studio, go to `Tools > Scripts`. This will open the Scripts window.
 3. Press the `+` button and drag an drop **both** files into the folder that opens.
 4. Select `replay_save_notification.lua` and press `Open`. Now it should look like this:<br><br>
