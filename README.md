@@ -4,7 +4,7 @@ This script for [OBS Studio](https://obsproject.com/) will play a customizable s
 
 Tested with OBS Studio 30.0.2 on Windows 10.
 
-## Usage
+## Installation
 
 1. Download `replay_save_notification.lua` and `replay_saved.wav` from the [latest release](https://github.com/mriot/obs-replay-save-notification/releases).
 2. In OBS Studio, go to `Tools > Scripts`. This will open the Scripts window.
