@@ -2,7 +2,8 @@ local obs = obslua
 local ffi = require("ffi")
 local winmm = ffi.load("Winmm")
 
-PROP_AUDIO_FILEPATH = script_path() .. "replay_saved.wav"
+SOUND_SAVING = script_path() .. "replay_saved.wav"
+SOUND_SAVED = script_path() .. "replay_saved_final.wav"
 
 ffi.cdef[[
     bool PlaySound(const char *pszSound, void *hmod, uint32_t fdwSound);
@@ -14,7 +15,7 @@ end
 
 function on_event(event)
     if event == obs.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVED then
-      playsound(PROP_AUDIO_FILEPATH)
+      playsound(SOUND_SAVED)
     end
 end
 
@@ -22,7 +23,7 @@ function on_hotkey(pressed)
     if not pressed or not obs.obs_frontend_replay_buffer_active() then
         return
     end
-    playsound(PROP_AUDIO_FILEPATH)
+    playsound(SOUND_SAVING)
 end
 
 function script_description()
@@ -54,6 +55,5 @@ end
 
 function script_load(settings)
     obs.obs_hotkey_register_frontend("replay_save_notification", "Save Replay Notification", on_hotkey)
-    -- uncomment below if you also want to play a sound when OBS is done saving
-    --obs.obs_frontend_add_event_callback(on_event)
+    obs.obs_frontend_add_event_callback(on_event)
 end
