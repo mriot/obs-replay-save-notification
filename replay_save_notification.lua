@@ -51,7 +51,7 @@ function script_description()
             <b>Play sound on Replay save</b>
         </span>
         <br>
-        <b>&nbsp;v.1.0.0</b>
+        <b>&nbsp;v.1.1.0</b>
         &nbsp;&nbsp;
         by <a href="https://github.com/mriot">mriot</a>
         <br><br>
