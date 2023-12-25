@@ -26,6 +26,25 @@ function on_hotkey(pressed)
     end
 end
 
+function script_load(settings)
+    -- save replay hotkey to trigger the first sound immediately
+    hotkey_id = obs.obs_hotkey_register_frontend("replay_save_notification", "Save Replay Notification", on_hotkey)
+    local hotkey_save_array = obs.obs_data_get_array(settings, hotkey_id)
+    obs.obs_hotkey_load(hotkey_id, hotkey_save_array)
+    obs.obs_data_array_release(hotkey_save_array)
+
+    -- subscribe to replay buffer events to trigger the second sound
+    obs.obs_frontend_add_event_callback(on_event)
+end
+
+function script_save(settings)
+    -- for some reason this is needed to persist the hotkey across OBS restarts
+    -- thanks @ https://obsproject.com/forum/threads/hotkey-not-saved-for-script.81794/post-343300
+    local hotkey_save_array = obs.obs_hotkey_save(hotkey_id)
+    obs.obs_data_set_array(settings, hotkey_id, hotkey_save_array)
+    obs.obs_data_array_release(hotkey_save_array)
+end
+
 function script_description()
 	return [[
         <span style="color: #4CC355;">
@@ -51,9 +70,4 @@ function script_description()
             <small style="color: #B33F3D;">Needs to be a .wav file.</small>
         </span>
     ]]
-end
-
-function script_load(settings)
-    obs.obs_hotkey_register_frontend("replay_save_notification", "Save Replay Notification", on_hotkey)
-    obs.obs_frontend_add_event_callback(on_event)
 end
