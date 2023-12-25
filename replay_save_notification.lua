@@ -2,8 +2,9 @@ local obs = obslua
 local ffi = require("ffi")
 local winmm = ffi.load("Winmm")
 
-SOUND_SAVING = script_path() .. "replay_saved.wav"
-SOUND_SAVED = script_path() .. "replay_saved_final.wav"
+
+SOUND_START = script_path() .. "replay_saved_start.wav"
+SOUND_END = script_path() .. "replay_saved_end.wav"
 
 ffi.cdef[[
     bool PlaySound(const char *pszSound, void *hmod, uint32_t fdwSound);
@@ -15,15 +16,14 @@ end
 
 function on_event(event)
     if event == obs.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVED then
-      playsound(SOUND_SAVED)
+      playsound(SOUND_END)
     end
 end
 
 function on_hotkey(pressed)
-    if not pressed or not obs.obs_frontend_replay_buffer_active() then
-        return
+    if pressed and obs.obs_frontend_replay_buffer_active() then
+        playsound(SOUND_START)
     end
-    playsound(SOUND_SAVING)
 end
 
 function script_description()
