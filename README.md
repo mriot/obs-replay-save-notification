@@ -7,7 +7,7 @@ This script for [OBS Studio](https://obsproject.com/) will play two sound effect
 
 You can customize this by simply deleting or renaming the sound file you dont need.
 
-Tested with OBS Studio 30.0.2 on Windows 10.
+> Tested with OBS Studio 30.0.2 on Windows 10.
 
 ## Installation
 
@@ -15,8 +15,9 @@ Tested with OBS Studio 30.0.2 on Windows 10.
 - In OBS Studio, go to `Tools > Scripts`.
 - Press `+` and drag an drop the downloaded files into the folder that opens.
 - Select `replay_save_notification.lua` and press `Open`. Now it should look like this:
-  ![scripts](https://github.com/mriot/mriot/assets/24588573/c4ef7c21-e9dd-4788-8c2d-2498ab56c9fb)
-- Go to `Settings > Hotkeys` and add the **same** hotkey for `Save Replay` and `Save Replay Notification` like in the screenshot below. (which hotkey you use is up to you)
+  ![scripts](https://github.com/mriot/obs-replay-save-notification/assets/24588573/8c366b23-35dc-4398-bfb8-18b023f820e4)
+- Go to `Settings > Hotkeys` and add the **same** hotkey for `Save Replay` and `Save Replay Notification` like in the screenshot below.  
+  (which hotkey you use is up to you)
   ![hotkeys](https://github.com/mriot/mriot/assets/24588573/f21f6864-53e4-46c7-8a52-319ae05688b4)
 - Press `OK` and you're done. Now you should hear sounds when you save a Replay with your hotkey.
 
@@ -32,7 +33,13 @@ To open the folder where the script is located, right click on the script and se
 
 > TIP: Adjust the sound effect volume to avoid it being too loud.  
 > You can either adjust the volume of OBS Studio in the Windows volume mixer or edit the files directly (e.g. with [Audacity](https://www.audacityteam.org/)).  
+>
 > Note that the former will lower all sounds of OBS Studio for you.
+
+## Troubleshooting
+
+To check the script logs go to `Tools > Scripts` and click on the `Script Log` button.  
+If you cant fix the problem yourself, [open an issue](https://github.com/mriot/obs-replay-save-notification/issues/new) or contact me on Discord: `mriot`
 
 ## Resources
 
