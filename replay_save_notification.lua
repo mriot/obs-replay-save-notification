@@ -17,6 +17,8 @@ end
 function playsound(filepath)
     if filepath and fileExists(filepath) then
         winmm.PlaySound(filepath, nil, 0x00020000)
+    else 
+        obs.script_log(obs.LOG_INFO, "Sound not found: " .. filepath)
     end
 end
 
