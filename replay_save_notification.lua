@@ -52,28 +52,21 @@ function script_save(settings)
 end
 
 function script_description()
-	return [[
+    return [[
         <span style="color: #4CC355;">
             <b>Play sound on Replay save</b>
         </span>
         <br>
-        <b>&nbsp;v.1.1.0</b>
+        <b>&nbsp;v.1.2</b>
         &nbsp;&nbsp;
-        by <a href="https://github.com/mriot">mriot</a>
+        by <a href="https://github.com/mriot/obs-replay-save-notification">mriot</a>
         <br><br>
         <span style="color: #DA7A55;">
-            In <b>Settings > Hotkeys > Save Replay Notification</b> 
-            set the same hotkey as for <b>Save Replay</b>.
+            Go to <b>Settings > Hotkeys</b> and make sure, that the hotkeys for <b>'Save Replay'</b> and <b>'Save Replay Notification'</b> are identical. 
         </span>
         <br><br>
         <span style="color: #FB1;">
-            <small>Ignore the warning emoji ⚠️ about shared hotkeys.</small>
-        </span>
-        <br><br>
-        <span style="color: #DA7A55;">
-            To change the sound, replace the <b style="color: #B33F3D;">replay_saved.wav</b> file in the script folder.
-            <br>
-            <small style="color: #B33F3D;">Needs to be a .wav file.</small>
+            <small>⚠️ Ignore the warning about shared hotkey conflicts.</small>
         </span>
     ]]
 end
