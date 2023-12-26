@@ -6,17 +6,23 @@ local winmm = ffi.load("Winmm")
 SOUND_START = script_path() .. "replay_saved_start.wav"
 SOUND_END = script_path() .. "replay_saved_end.wav"
 
-ffi.cdef[[
+ffi.cdef [[
     bool PlaySound(const char *pszSound, void *hmod, uint32_t fdwSound);
 ]]
 
+function fileExists(path)
+    return io.open(path, "r") ~= nil
+end
+
 function playsound(filepath)
-    winmm.PlaySound(filepath, nil, 0x00020000)
+    if filepath and fileExists(filepath) then
+        winmm.PlaySound(filepath, nil, 0x00020000)
+    end
 end
 
 function on_event(event)
     if event == obs.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVED then
-      playsound(SOUND_END)
+        playsound(SOUND_END)
     end
 end
 
